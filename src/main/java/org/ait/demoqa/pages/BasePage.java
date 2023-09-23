@@ -1,5 +1,6 @@
 package org.ait.demoqa.pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,36 +18,50 @@ public abstract class BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void click(WebElement element){
+    public void click(WebElement element) {
         element.click();
     }
 
-    public void type(WebElement element, String text){
-        if (text != null){
+    public void type(WebElement element, String text) {
+        if (text != null) {
             click(element);
             element.clear();
             element.sendKeys(text);
         }
     }
 
-     // методы если проблемы с тем, чтобы добраться до элементов (например не можем напрямую кликнуть, что-то мешает)
-    public void clickWithJSExecutor(WebElement element,int x, int y){
+    // методы если проблемы с тем, чтобы добраться до элементов (например не можем напрямую кликнуть, что-то мешает)
+    public void clickWithJSExecutor(WebElement element, int x, int y) {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(" + x + "," + y + ")");
         element.click();
     }
 
-    public void typeWithJSExecutor(WebElement element, String text, int x, int y){
-        if (text != null){
-            clickWithJSExecutor(element,x,y);
+    public void typeWithJSExecutor(WebElement element, String text, int x, int y) {
+        if (text != null) {
+            clickWithJSExecutor(element, x, y);
             element.clear();
             element.sendKeys(text);
-       }
+        }
 
     }
+
     public boolean shouldHaveText(WebElement element, String text, int time) {
-        return  new WebDriverWait(driver, Duration.ofSeconds(time))
+        return new WebDriverWait(driver, Duration.ofSeconds(time))
                 .until(ExpectedConditions.textToBePresentInElement(element, text));
     }
+
+    public boolean isTextPresent(WebElement element, String text) {
+        return element.getText().contains(text);
+    }
+
+    public boolean shouldHaveTextInAlert(String text, int time) {
+        return new WebDriverWait(driver, Duration.ofSeconds(time))
+                .until(ExpectedConditions.alertIsPresent())
+                .getText()
+                .equals(text);
+    }
+
 }
+

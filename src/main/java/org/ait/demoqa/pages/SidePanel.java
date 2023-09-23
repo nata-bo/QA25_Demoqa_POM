@@ -16,4 +16,17 @@ public class SidePanel extends BasePage{
         click(login);
         return new LoginPage(driver);
     }
+     @FindBy(css = ".show #item-1")
+     WebElement alerts;
+    public AlertsPage selectAlerts() {
+       clickWithJSExecutor(alerts,0,600);
+        return new AlertsPage(driver);
+    }
+
+    @FindBy(css = ".show #item-0")
+    WebElement browser;
+    public BrowserWindowsPage selectBrowserWindows() {
+        clickWithJSExecutor(browser,0,600);
+        return new BrowserWindowsPage(driver);
+    }
 }
