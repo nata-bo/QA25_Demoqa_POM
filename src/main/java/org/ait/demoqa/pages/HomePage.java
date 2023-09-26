@@ -24,4 +24,12 @@ public class HomePage extends BasePage{
         click(alertUndWindow);
         return new SidePanel(driver);
     }
+
+    @FindBy(css = ".top-card:nth-child(1)")
+    WebElement elements;
+
+    public SidePanel getElements() {
+        click(elements);
+        return new SidePanel(driver);
+    }
 }

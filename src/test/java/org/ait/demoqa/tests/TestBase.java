@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class TestBase {
 
-    WebDriver driver;
+   public WebDriver driver;
     @BeforeMethod
     public void init(){
         driver = new ChromeDriver();
@@ -21,4 +21,6 @@ public class TestBase {
     public void tearDown(){
         driver.quit();
     }
+
+
 }

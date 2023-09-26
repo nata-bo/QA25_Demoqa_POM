@@ -1,5 +1,6 @@
-package org.ait.demoqa.pages;
+package org.ait.demoqa.pages.alertsFrameWindows;
 
+import org.ait.demoqa.pages.BasePage;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +11,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class AlertsPage extends BasePage{
+public class AlertsPage extends BasePage {
 
     public AlertsPage(WebDriver driver) {
         super(driver);

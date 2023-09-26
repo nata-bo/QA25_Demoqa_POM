@@ -1,5 +1,6 @@
-package org.ait.demoqa.pages;
+package org.ait.demoqa.pages.alertsFrameWindows;
 
+import org.ait.demoqa.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,7 @@ import org.testng.Assert;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrowserWindowsPage extends BasePage{
+public class BrowserWindowsPage extends BasePage {
 
     public BrowserWindowsPage(WebDriver driver) {
         super(driver);
