@@ -91,5 +91,9 @@ public abstract class BasePage {
             System.err.println(linkUrl+ " - "+ ex.getMessage()+" is a broken link");
         }
     }
+
+    public String getValueAttribute(WebElement element, String name) {
+        return element.getAttribute(name);
+    }
 }
 

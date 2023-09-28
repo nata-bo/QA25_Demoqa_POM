@@ -1,5 +1,6 @@
 package org.ait.demoqa.pages;
 
+import org.ait.demoqa.pages.widgets.WidgetsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,7 +21,7 @@ public class HomePage extends BasePage{
 
     @FindBy(css = ".top-card:nth-child(3)")
     WebElement alertUndWindow;
-    public SidePanel getAlertUndWindow() {
+    public SidePanel getAlertsFramesWindows() {
         click(alertUndWindow);
         return new SidePanel(driver);
     }
@@ -30,6 +31,13 @@ public class HomePage extends BasePage{
 
     public SidePanel getElements() {
         click(elements);
+        return new SidePanel(driver);
+    }
+
+    @FindBy(css = ".top-card:nth-child(4)")
+    WebElement widgets;
+    public SidePanel getWidgets() {
+        click(widgets);
         return new SidePanel(driver);
     }
 }

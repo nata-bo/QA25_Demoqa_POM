@@ -1,6 +1,6 @@
-package org.ait.demoqa.tests.alertsFrameWindows;
+package org.ait.demoqa.tests.alertsFramesWindows;
 
-import org.ait.demoqa.pages.alertsFrameWindows.BrowserWindowsPage;
+import org.ait.demoqa.pages.alertsFramesWindows.BrowserWindowsPage;
 import org.ait.demoqa.pages.HomePage;
 import org.ait.demoqa.pages.SidePanel;
 import org.ait.demoqa.tests.TestBase;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class BrowserWindowsTests extends TestBase {
     @BeforeMethod
     public void precondition(){
-        new HomePage(driver).getAlertUndWindow();
+        new HomePage(driver).getAlertsFramesWindows();
         new SidePanel(driver).selectBrowserWindows();
     }
 

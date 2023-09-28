@@ -1,6 +1,6 @@
-package org.ait.demoqa.tests.alertsFrameWindows;
+package org.ait.demoqa.tests.alertsFramesWindows;
 
-import org.ait.demoqa.pages.alertsFrameWindows.AlertsPage;
+import org.ait.demoqa.pages.alertsFramesWindows.AlertsPage;
 import org.ait.demoqa.pages.HomePage;
 import org.ait.demoqa.pages.SidePanel;
 import org.ait.demoqa.tests.TestBase;
@@ -11,7 +11,7 @@ public class AlertTests extends TestBase {
 
     @BeforeMethod
     public void precondition(){
-        new HomePage(driver).getAlertUndWindow();
+        new HomePage(driver).getAlertsFramesWindows();
         new SidePanel(driver).selectAlerts();
     }
     @Test
