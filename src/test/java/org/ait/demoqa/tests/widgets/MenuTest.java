@@ -12,7 +12,7 @@ public class MenuTest extends TestBase {
     @BeforeMethod
     public void precondition(){
         new HomePage(driver).getWidgets();
-        new SidePanel(driver).selectMenu();
+        new SidePanel(driver).selectMenu().hideIframes();
     }
 
 
