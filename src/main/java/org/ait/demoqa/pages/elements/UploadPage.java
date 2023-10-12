@@ -68,8 +68,8 @@ public class UploadPage extends BasePage {
         Dimension dimension = driver.manage().window().getSize();
         System.out.println("Dimension x and y: " +dimension.getWidth()+" "+dimension.getHeight());
 
-        int x = dimension.getWidth()/4 + 200;
-        int y = dimension.getHeight()/2;
+        int x = dimension.getWidth()/4 +480;
+        int y = dimension.getHeight()/2-100;
 
         robot.mouseMove(x,y);
         pause(1000);
