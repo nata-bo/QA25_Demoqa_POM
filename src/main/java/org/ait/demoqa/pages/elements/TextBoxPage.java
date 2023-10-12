@@ -30,19 +30,31 @@ public class TextBoxPage extends BasePage {
     @FindBy(id = "submit")
     WebElement submit;
 
+
+        @FindBy(css = ".border > #currentAddress")
+        WebElement currentAddressResult;
+
+        @FindBy(css = ".border > #permanentAddress")
+        WebElement permanentAddressResult;
+
+        public TextBoxPage assertCopyPastText() {
+            clickWithJSExecutor(submit, 0, 100);
+            String[] current = currentAddressResult.getText().split(":");
+            String[] permanent = permanentAddressResult.getText().split(":");
+
+            Assert.assertEquals(permanent[1], current[1]);
+            return this;
+        }
     @FindBy(xpath = "//p[@id='currentAddress']")
     WebElement actualText;
     @FindBy(xpath = "//p[@id='permanentAddress']")
     WebElement expectedText;
 
-    public TextBoxPage assertCopyPastText(String text) {
-        clickWithJSExecutor(submit,0,500);
+            public TextBoxPage assertCopyPastText2(String text) {
+                clickWithJSExecutor(submit, 0, 100);
+            Assert.assertEquals((shouldHaveText(actualText,text,5)),
+               (shouldHaveText(expectedText,text,5)));
 
-        Assert.assertEquals((shouldHaveText(actualText,text,5)),
-                (shouldHaveText(expectedText,text,5)));
-
-      //  Assert.assertTrue(shouldHaveText(actualText,text,5));
-      //  Assert.assertTrue(shouldHaveText(expectedText,text,5));
         return this;
     }
 

@@ -18,7 +18,9 @@ public class TextBoxTest extends TestBase {
     @Test
     public void keyBoardEventTest(){
         new TextBoxPage(driver).keyBoardEvent("Hi!!!")
-                .assertCopyPastText("Hi!!!");
+                .assertCopyPastText();
+
+               // .assertCopyPastText2("Hi!!!");
     }
 
 }
